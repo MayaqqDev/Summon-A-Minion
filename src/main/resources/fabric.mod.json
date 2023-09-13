@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "sam",
+  "version": "${version}",
+  "name": "sam",
+  "description": "Adds a bunch of items, Blocks and entities related to the summoner class in Terraria! Summon your own minion army and defeat your foes.",
+  "authors": [
+    "Mayaqq"
+  ],
+  "contact": {
+    "repo": "https://github.com/MayaqqDev/Summon-a-Minion",
+    "sources": "https://github.com/MayaqqDev/Estrogen"
+  },
+  "license": "LGPL-3.0",
+  "icon": "assets/sam/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "dev.mayaqq.sam.client.SummonAMinionClient"
+    ],
+    "main": [
+      "dev.mayaqq.sam.SummonAMinion"
+    ]
+  },
+  "mixins": [
+    "sam.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/w7PpGax9Bq"
+      }
+    }
+  }
+}
