@@ -13,6 +13,7 @@ repositories {
     maven { url = "https://jitpack.io/" } // Mixin extras
     maven { url = "https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1" } // DevAuth
     maven { url = "https://maven.jamieswhiteshirt.com/libs-release" } // Reach Entity Attributes
+    maven { url = "https://maven.ladysnake.org/releases" } // Cardinal Components
 }
 
 dependencies {
@@ -24,6 +25,10 @@ dependencies {
 
     // Trinkets
     modImplementation ("maven.modrinth:trinkets:${project.trinkets_version}")
+    // Cardinal Components
+    project.cardinal_modules.replaceAll(" ", "").split(",").each { module ->
+        modApi ("dev.onyxstudios.cardinal-components-api:cardinal-components-${module}:${project.cardinal_version}")
+    }
 
     // Reach Entity Attributes
     include modImplementation("com.jamieswhiteshirt:reach-entity-attributes:${project.reach_entity_attributes_version}")

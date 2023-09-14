@@ -20,6 +20,9 @@
     ],
     "main": [
       "dev.mayaqq.sam.SummonAMinion"
+    ],
+    "preLaunch": [
+      "dev.mayaqq.sam.SamPreLaunch"
     ]
   },
   "mixins": [
