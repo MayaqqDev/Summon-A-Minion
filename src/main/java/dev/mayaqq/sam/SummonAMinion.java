@@ -1,6 +1,7 @@
 package dev.mayaqq.sam;
 
 import dev.mayaqq.sam.registry.SamAttributes;
+import dev.mayaqq.sam.registry.SamEntities;
 import dev.mayaqq.sam.registry.SamItems;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
@@ -15,6 +16,7 @@ public class SummonAMinion implements ModInitializer {
     public void onInitialize() {
         SamItems.register();
         SamAttributes.register();
+        SamEntities.register();
     }
 
     public static Identifier id(String path) {

@@ -9,7 +9,7 @@
   ],
   "contact": {
     "repo": "https://github.com/MayaqqDev/Summon-a-Minion",
-    "sources": "https://github.com/MayaqqDev/Estrogen"
+    "sources": "https://github.com/MayaqqDev/Summon-a-Minion"
   },
   "license": "LGPL-3.0",
   "icon": "assets/sam/icon.png",
@@ -22,16 +22,17 @@
       "dev.mayaqq.sam.SummonAMinion"
     ],
     "preLaunch": [
-      "dev.mayaqq.sam.SamPreLaunch"
+      "dev.mayaqq.sam.SummonAMinionPreLaunch"
     ]
   },
   "mixins": [
     "sam.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=${loader_version}",
+    "fabricloader": ">=0.14.21",
     "fabric": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": "1.20.1",
+    "trinkets": "*"
   },
   "custom": {
     "modmenu": {

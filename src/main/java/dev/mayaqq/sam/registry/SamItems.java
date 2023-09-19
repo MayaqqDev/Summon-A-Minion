@@ -8,7 +8,7 @@ import net.minecraft.registry.Registry;
 
 public class SamItems {
 
-    public static final Item SLIME_STAFF = register("slime_staff", new SummonerWandItem(new Item.Settings()));
+    public static final Item SLIME_STAFF = register("slime_staff", new SummonerWandItem(new Item.Settings(), SamEntities.SLIME_SUMMON));
 
     public static void register() {}
 
