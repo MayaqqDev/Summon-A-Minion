@@ -17,9 +17,9 @@ configurations.all {
 }
 
 repositories {
-    maven { url = "https://api.modrinth.com/maven" } // Trinkets, Yacl
+    maven { url = "https://api.modrinth.com/maven" } // Trinkets, Yacl, Fractal
     maven { url = "https://maven.terraformersmc.com/" } // Modmenu
-    maven { url = "https://maven.shedaniel.me" } // REI
+    maven { url = "https://maven.shedaniel.me" } // REI, Architectury
     maven { url = "https://jitpack.io/" } // Mixin extras
     maven { url = "https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1" } // DevAuth
     maven { url = "https://maven.jamieswhiteshirt.com/libs-release" } // Reach Entity Attributes
@@ -42,6 +42,9 @@ dependencies {
 
     // Reach Entity Attributes
     include modImplementation("com.jamieswhiteshirt:reach-entity-attributes:${project.reach_entity_attributes_version}")
+
+    // Fractal
+    include modImplementation("maven.modrinth:fractal-lib:${project.fractal_version}")
 
     // Config
     modImplementation "maven.modrinth:yacl:${project.yacl_version}"
@@ -95,6 +98,37 @@ java {
 jar {
     from("LICENSE") {
         rename { "${it}_${project.base.archivesName.get()}"}
+    }
+}
+
+loom {
+    runs {
+        datagenClient {
+            inherit client
+            name "Data Generation"
+            vmArg "-Dfabric-api.datagen"
+            vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
+            vmArg "-Dfabric-api.datagen.modid=${mod_id}"
+
+            runDir "build/datagen"
+        }
+    }
+    runs {
+        mixinDebug {
+            inherit client
+            name "Mixin Debug"
+            vmArg("-Dmixin.debug.export=true")
+        }
+    }
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs += [
+                    'src/main/generated'
+            ]
+        }
     }
 }
 

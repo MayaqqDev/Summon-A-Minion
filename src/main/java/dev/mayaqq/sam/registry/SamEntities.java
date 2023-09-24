@@ -12,15 +12,20 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 
 
+import java.util.HashMap;
+
 import static dev.mayaqq.sam.SummonAMinion.id;
 
 public class SamEntities {
-    public static final EntityType<SlimeSummonEntity> SLIME_SUMMON = registerSummon("slime_summon", SlimeSummonEntity::new, EntityDimensions.fixed(0.75F, 0.75F), createDefaultAttributes(0.30000001192092896, 2.0));
+    public static HashMap<EntityType<? extends SummonEntity>, Double> summonEntityDamageMap = new HashMap<>();
+
+    public static final EntityType<SlimeSummonEntity> SLIME_SUMMON = registerSummon("slime_summon", SlimeSummonEntity::new, EntityDimensions.fixed(0.75F, 0.75F), createDefaultAttributes(0.30000001192092896, 1.0));
 
     public static void register() {}
 
     public static <T extends Entity> EntityType<T> registerSummon(String id, EntityType.EntityFactory<T> factory, EntityDimensions dimensions, DefaultAttributeContainer.Builder attributes) {
         EntityType<T> summon = Registry.register(Registries.ENTITY_TYPE, id(id), FabricEntityTypeBuilder.create(SpawnGroup.MISC, factory).dimensions(dimensions).build());
+        summonEntityDamageMap.put((EntityType<? extends SummonEntity>) summon, attributes.build().getValue(EntityAttributes.GENERIC_ATTACK_DAMAGE));
         FabricDefaultAttributeRegistry.register((EntityType<? extends SummonEntity>) summon, attributes);
         return summon;
     }

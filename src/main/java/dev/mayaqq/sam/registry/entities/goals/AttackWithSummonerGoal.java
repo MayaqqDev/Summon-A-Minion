@@ -38,5 +38,10 @@ public class AttackWithSummonerGoal extends TrackTargetGoal {
 
         super.start();
     }
+
+    @Override
+    public boolean shouldContinue() {
+        return super.shouldContinue() && this.attacking == this.entity.getOwner().getAttacking();
+    }
 }
 

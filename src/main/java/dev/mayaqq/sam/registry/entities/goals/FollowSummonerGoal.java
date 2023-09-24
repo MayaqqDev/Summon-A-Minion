@@ -6,6 +6,7 @@ import net.minecraft.block.LeavesBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.ai.pathing.*;
+import net.minecraft.entity.mob.SlimeEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldView;
 
@@ -85,7 +86,6 @@ public class FollowSummonerGoal extends Goal {
             } else {
                 this.navigation.startMovingTo(this.owner, this.speed);
             }
-
         }
     }
 

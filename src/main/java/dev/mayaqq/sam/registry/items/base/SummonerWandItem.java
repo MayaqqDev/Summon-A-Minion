@@ -1,34 +1,63 @@
 package dev.mayaqq.sam.registry.items.base;
 
 import com.jamieswhiteshirt.reachentityattributes.ReachEntityAttributes;
-import dev.mayaqq.sam.registry.entities.SlimeSummonEntity;
+import dev.mayaqq.sam.extensions.PlayerEntityExtension;
+import dev.mayaqq.sam.registry.SamAttributes;
+import dev.mayaqq.sam.registry.SamEntities;
 import dev.mayaqq.sam.registry.entities.SummonEntity;
+import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class SummonerWandItem extends Item {
 
     EntityType<? extends SummonEntity> entityType;
+    private double minionDamage;
 
-    public SummonerWandItem(Settings settings, EntityType<SlimeSummonEntity> entityType) {
+    public SummonerWandItem(Settings settings, EntityType<? extends SummonEntity> entityType) {
         super(settings.maxCount(1));
         this.entityType = entityType;
     }
 
     @Override
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        if (entity instanceof PlayerEntity player) {
+            minionDamage = player.getAttributeValue(SamAttributes.MINION_DAMAGE) + SamEntities.summonEntityDamageMap.get(entityType);
+        }
+    }
+
+    @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+        if (world.isClient) return TypedActionResult.success(user.getStackInHand(hand));
+        if (user.getAttributeValue(SamAttributes.MINION_SLOTS) <= 0) return TypedActionResult.fail(user.getStackInHand(hand));
+        if (((PlayerEntityExtension) user).summonAMinion$getSummonedMinionCount() >= user.getAttributeValue(SamAttributes.MINION_SLOTS)) {
+            ((PlayerEntityExtension) user).summonAMinion$getSummonedMinions().get(0).remove(Entity.RemovalReason.DISCARDED);
+            ((PlayerEntityExtension) user).summonAMinion$getSummonedMinions().remove(0);
+        }
         Vec3d pos =  user.raycast(ReachEntityAttributes.getReachDistance(user, 4.5), 0, false).getPos();
-        SummonEntity slimeSummonEntity = new SummonEntity(this.entityType, world);
-        slimeSummonEntity.setOwner(user);
-        slimeSummonEntity.updatePosition(pos.x, pos.y, pos.z);
-        slimeSummonEntity.setInvulnerable(true);
-        world.spawnEntity(slimeSummonEntity);
+        SummonEntity summonEntity = new SummonEntity(this.entityType, world);
+        summonEntity.setOwner(user);
+        summonEntity.updatePosition(pos.x, pos.y, pos.z);
+        world.spawnEntity(summonEntity);
+        user.getItemCooldownManager().set(this, 10);
         return TypedActionResult.success(user.getStackInHand(hand));
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        tooltip.add(Text.of("Right click to summon a minion!"));
+        tooltip.add(Text.of(" "));
+        tooltip.add(Text.of("Minion Damage: " + minionDamage));
     }
 }

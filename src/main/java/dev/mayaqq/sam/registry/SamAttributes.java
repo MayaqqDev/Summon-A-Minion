@@ -9,6 +9,7 @@ import net.minecraft.registry.Registry;
 public class SamAttributes {
 
     public static final EntityAttribute MINION_SLOTS = register("minion_slots", 1, 0, 1000);
+    public static final EntityAttribute MINION_DAMAGE = register("minion_damage", 0, 0, 1000);
 
     public static void register() {}
 

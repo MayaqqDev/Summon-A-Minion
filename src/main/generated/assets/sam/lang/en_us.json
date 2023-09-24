@@ -1,0 +1,15 @@
+{
+  "attribute.name.generic.sam.minion_damage": "Minion Damage",
+  "attribute.name.generic.sam.minion_slots": "Minion Slots",
+  "config.sam.category.loot_tables": "Loot Tables",
+  "config.sam.option.slime_staff": "Slime Staff Loot Table",
+  "config.sam.option.slime_staff.chance": "Chance",
+  "config.sam.option.slime_staff.description": "Should Slimes drop the Slime Staff",
+  "config.sam.option_group.slime_staff": "Slime Staff",
+  "config.sam.title": "Summon A Minion Config",
+  "entity.sam.slime_summon": "Slime Summon",
+  "item.sam.slime_staff": "Slime Staff",
+  "itemGroup.sam.main": "Summon a Minion",
+  "itemGroup.sam.wands": "Wands",
+  "itemGroup.sam.whips": "Whips"
+}

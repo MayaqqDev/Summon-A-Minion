@@ -119,3 +119,4 @@ run/
 /gradlew
 /gradlew.bat
 /gradle/
+/src/main/generated/.cache/

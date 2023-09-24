@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "sam",
   "version": "${version}",
-  "name": "sam",
+  "name": "Summon A Minion",
   "description": "Adds a bunch of items, Blocks and entities related to the summoner class in Terraria! Summon your own minion army and defeat your foes.",
   "authors": [
     "Mayaqq"
@@ -23,6 +23,12 @@
     ],
     "preLaunch": [
       "dev.mayaqq.sam.SummonAMinionPreLaunch"
+    ],
+    "fabric-datagen": [
+      "dev.mayaqq.sam.datagen.SamDatagen"
+    ],
+    "modmenu": [
+      "dev.mayaqq.sam.compat.ModMenuIntegration"
     ]
   },
   "mixins": [
