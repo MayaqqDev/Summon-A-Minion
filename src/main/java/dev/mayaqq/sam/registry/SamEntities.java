@@ -21,7 +21,7 @@ import static dev.mayaqq.sam.SummonAMinion.id;
 public class SamEntities {
     public static HashMap<EntityType<? extends SummonEntity>, Double> summonEntityDamageMap = new HashMap<>();
 
-    public static final EntityType<SlimeSummonEntity> SLIME_SUMMON = registerSummon("slime_summon", SlimeSummonEntity::new, EntityDimensions.fixed(0.75F, 0.75F), createDefaultAttributes(0.30000001192092896, 1.0));
+    public static final EntityType<SlimeSummonEntity> SLIME_SUMMON = registerSummon("slime_summon", SlimeSummonEntity::new, EntityDimensions.fixed(0.375F, 0.375F), createDefaultAttributes(0.30000001192092896, 1.0));
 
     public static void register() {}
 
