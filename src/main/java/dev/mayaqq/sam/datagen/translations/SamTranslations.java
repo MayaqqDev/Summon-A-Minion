@@ -7,7 +7,6 @@ import dev.mayaqq.sam.registry.SamItems;
 import dev.mayaqq.sam.registry.itemGroups.SamItemGroups;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.minecraft.item.ItemGroup;
 
 public class SamTranslations {
     public static class EN_US extends FabricLanguageProvider {
@@ -39,6 +38,7 @@ public class SamTranslations {
             tb.add(SamConfig.OPTION_SLIME_STAFF, "Slime Staff Loot Table");
             tb.add(SamConfig.OPTION_SLIME_STAFF_DESCRIPTION, "Should Slimes drop the Slime Staff");
             tb.add(SamConfig.OPTION_SLIME_STAFF_CHANCE, "Chance");
+            tb.add(SamConfig.OPTION_SLIME_STAFF_REQUIRE_PLAYER_KILL, "Require Player Kill");
         }
     }
 }

@@ -5,6 +5,7 @@
   "config.sam.option.slime_staff": "Slime Staff Loot Table",
   "config.sam.option.slime_staff.chance": "Chance",
   "config.sam.option.slime_staff.description": "Should Slimes drop the Slime Staff",
+  "config.sam.option.slime_staff.require_player_kill": "Require Player Kill",
   "config.sam.option_group.slime_staff": "Slime Staff",
   "config.sam.title": "Summon A Minion Config",
   "entity.sam.slime_summon": "Slime Summon",

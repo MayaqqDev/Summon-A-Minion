@@ -23,6 +23,7 @@ public class SamConfig {
                 public static final String OPTION_SLIME_STAFF = "config.sam.option.slime_staff";
                     public static final String OPTION_SLIME_STAFF_DESCRIPTION = "config.sam.option.slime_staff.description";
                 public static final String OPTION_SLIME_STAFF_CHANCE = "config.sam.option.slime_staff.chance";
+                public static final String OPTION_SLIME_STAFF_REQUIRE_PLAYER_KILL = "config.sam.option.slime_staff.require_player_kill";
 
     public final Path configFile = FabricLoader.getInstance().getConfigDir().resolve("SummonAMinion.json");
     private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -30,6 +31,7 @@ public class SamConfig {
     // loot tables
     public boolean slimeStaff = true;
         public float slimeStaffChance = 0.1F;
+        public boolean requirePlayerKill = true;
 
     public void save() {
         try {
@@ -38,6 +40,7 @@ public class SamConfig {
             JsonObject json = new JsonObject();
             json.addProperty("slimeStaff", slimeStaff);
             json.addProperty("slimeStaffChance", slimeStaffChance);
+            json.addProperty("requirePlayerKill", requirePlayerKill);
 
             Files.writeString(configFile, gson.toJson(json));
         } catch (Exception e) {
@@ -56,6 +59,7 @@ public class SamConfig {
 
             if (json.has("slimeStaff")) slimeStaff = json.getAsJsonPrimitive("slimeStaff").getAsBoolean();
             if (json.has("slimeStaffChance")) slimeStaffChance = json.getAsJsonPrimitive("slimeStaffChance").getAsFloat();
+            if (json.has("requirePlayerKill")) requirePlayerKill = json.getAsJsonPrimitive("requirePlayerKill").getAsBoolean();
         } catch (Exception e) {
             SummonAMinion.LOGGER.error("Failed to load config file with exception: " + e.getMessage());
         }
@@ -86,6 +90,15 @@ public class SamConfig {
                                                 value -> slimeStaffChance = value
                                         )
                                         .controller(FloatFieldControllerBuilderImpl::new)
+                                        .build())
+                                .option(Option.createBuilder(boolean.class)
+                                        .name(Text.translatable(OPTION_SLIME_STAFF_REQUIRE_PLAYER_KILL))
+                                        .binding(
+                                                true,
+                                                () -> requirePlayerKill,
+                                                value -> requirePlayerKill = value
+                                        )
+                                        .controller(TickBoxControllerBuilderImpl::new)
                                         .build())
                                 .build())
                         .build())
