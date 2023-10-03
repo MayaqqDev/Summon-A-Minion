@@ -1,6 +1,6 @@
 package dev.mayaqq.sam.registry.entities.goals;
 
-import dev.mayaqq.sam.registry.entities.SummonEntity;
+import dev.mayaqq.sam.registry.entities.summons.SummonEntity;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.mob.PathAwareEntity;
 

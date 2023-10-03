@@ -4,7 +4,7 @@ import com.jamieswhiteshirt.reachentityattributes.ReachEntityAttributes;
 import dev.mayaqq.sam.extensions.PlayerEntityExtension;
 import dev.mayaqq.sam.registry.SamAttributes;
 import dev.mayaqq.sam.registry.SamEntities;
-import dev.mayaqq.sam.registry.entities.SummonEntity;
+import dev.mayaqq.sam.registry.entities.summons.SummonEntity;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;

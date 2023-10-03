@@ -1,4 +1,4 @@
-package dev.mayaqq.sam.registry.entities;
+package dev.mayaqq.sam.registry.entities.summons;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.control.MoveControl;

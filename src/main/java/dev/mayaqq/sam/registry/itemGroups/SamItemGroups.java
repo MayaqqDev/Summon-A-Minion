@@ -3,6 +3,7 @@ package dev.mayaqq.sam.registry.itemGroups;
 import de.dafuqs.fractal.api.ItemSubGroup;
 import dev.mayaqq.sam.registry.SamItems;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.client.option.KeyBinding;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -15,6 +16,7 @@ import static dev.mayaqq.sam.SummonAMinion.id;
 public class SamItemGroups {
 
     public static String MAIN_TK = "itemGroup.sam.main";
+    public static String GENERAL_TK = "itemGroup.sam.general";
     public static String WHIPS_TK = "itemGroup.sam.whips";
     public static String WANDS_TK = "itemGroup.sam.wands";
 
@@ -28,11 +30,24 @@ public class SamItemGroups {
             .noRenderedName()
             .build();
 
+    public static final ItemGroup GENERAL = new ItemSubGroup.Builder(MAIN, Text.translatable(GENERAL_TK)).entries(((displayContext, entries) -> {
+        entries.add(SamItems.ZOOLOGIST_SPAWN_EGG);
+        entries.add(SamItems.DOG_EARS);
+        entries.add(SamItems.DOG_TAIL);
+        entries.add(SamItems.FOX_EARS);
+        entries.add(SamItems.FOX_TAIL);
+        entries.add(SamItems.LIZARD_EARS);
+        entries.add(SamItems.LIZARD_TAIL);
+        entries.add(SamItems.RABBIT_EARS);
+        entries.add(SamItems.RABBIT_TAIL);
+    })).build();
+
     public static final ItemGroup WANDS = new ItemSubGroup.Builder(MAIN, Text.translatable(WANDS_TK)).entries(((displayContext, entries) -> {
         entries.add(SamItems.SLIME_STAFF);
     })).build();
 
     public static final ItemGroup WHIPS = new ItemSubGroup.Builder(MAIN, Text.translatable(WHIPS_TK)).entries(((displayContext, entries) -> {
+        entries.add(SamItems.LEATHER_WHIP);
     })).build();
 
     public static void register() {

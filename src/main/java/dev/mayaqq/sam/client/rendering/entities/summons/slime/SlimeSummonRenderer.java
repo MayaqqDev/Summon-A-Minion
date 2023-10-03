@@ -1,6 +1,6 @@
 package dev.mayaqq.sam.client.rendering.entities.summons.slime;
 
-import dev.mayaqq.sam.registry.entities.SlimeSummonEntity;
+import dev.mayaqq.sam.registry.entities.summons.SlimeSummonEntity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.render.entity.model.EntityModelLayer;

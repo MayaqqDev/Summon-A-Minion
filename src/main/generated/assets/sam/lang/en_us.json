@@ -9,7 +9,10 @@
   "config.sam.option_group.slime_staff": "Slime Staff",
   "config.sam.title": "Summon A Minion Config",
   "entity.sam.slime_summon": "Slime Summon",
+  "entity.sam.zoologist": "Zoologist",
   "item.sam.slime_staff": "Slime Staff",
+  "item.sam.zoologist_spawn_egg": "Zoologist Spawn Egg",
+  "itemGroup.sam.general": "General",
   "itemGroup.sam.main": "Summon a Minion",
   "itemGroup.sam.wands": "Wands",
   "itemGroup.sam.whips": "Whips"

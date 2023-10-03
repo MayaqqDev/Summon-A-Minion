@@ -1,6 +1,6 @@
 package dev.mayaqq.sam.extensions;
 
-import dev.mayaqq.sam.registry.entities.SummonEntity;
+import dev.mayaqq.sam.registry.entities.summons.SummonEntity;
 
 import java.util.ArrayList;
 

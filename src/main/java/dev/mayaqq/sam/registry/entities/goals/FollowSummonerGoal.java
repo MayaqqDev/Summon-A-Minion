@@ -1,6 +1,6 @@
 package dev.mayaqq.sam.registry.entities.goals;
 
-import dev.mayaqq.sam.registry.entities.SummonEntity;
+import dev.mayaqq.sam.registry.entities.summons.SummonEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.entity.LivingEntity;

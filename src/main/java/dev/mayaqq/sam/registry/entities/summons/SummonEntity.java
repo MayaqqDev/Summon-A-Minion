@@ -1,4 +1,4 @@
-package dev.mayaqq.sam.registry.entities;
+package dev.mayaqq.sam.registry.entities.summons;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;

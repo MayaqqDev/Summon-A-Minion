@@ -19,15 +19,20 @@ public class SamTranslations {
             // Summons
             tb.add(SamEntities.SLIME_SUMMON, "Slime Summon");
 
+            // Entities
+            tb.add(SamEntities.ZOOLOGIST_ENTITY, "Zoologist");
+
             // Attributes
             tb.add(SamAttributes.MINION_DAMAGE, "Minion Damage");
             tb.add(SamAttributes.MINION_SLOTS, "Minion Slots");
 
             // Items
             tb.add(SamItems.SLIME_STAFF, "Slime Staff");
+            tb.add(SamItems.ZOOLOGIST_SPAWN_EGG, "Zoologist Spawn Egg");
 
             // Item Groups
             tb.add(SamItemGroups.MAIN_TK, "Summon a Minion");
+            tb.add(SamItemGroups.GENERAL_TK, "General");
             tb.add(SamItemGroups.WANDS_TK, "Wands");
             tb.add(SamItemGroups.WHIPS_TK, "Whips");
 
