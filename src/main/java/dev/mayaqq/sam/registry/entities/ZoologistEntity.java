@@ -1,10 +1,6 @@
 package dev.mayaqq.sam.registry.entities;
 
-import com.google.common.collect.ImmutableMap;
 import dev.mayaqq.sam.registry.SamItems;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ExperienceOrbEntity;
@@ -127,7 +123,7 @@ public class ZoologistEntity extends MerchantEntity {
                 return new TradeOffers.Factory[]{new SellDecorationTrinket(SamItems.LIZARD_EARS), new SellDecorationTrinket(SamItems.LIZARD_TAIL)};
             }
             case 6, 7 -> {
-                return new TradeOffers.Factory[]{new SellDecorationTrinket(SamItems.RABBIT_EARS), new SellDecorationTrinket(SamItems.RABBIT_TAIL)};
+                return new TradeOffers.Factory[]{new SellDecorationTrinket(SamItems.BUNNY_EARS), new SellDecorationTrinket(SamItems.BUNNY_TAIL)};
             }
             default -> {
                 return null;

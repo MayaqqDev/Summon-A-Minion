@@ -1,5 +1,7 @@
 package dev.mayaqq.sam.registry.items.base;
 
+import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.Multimap;
 import com.jamieswhiteshirt.reachentityattributes.ReachEntityAttributes;
 import dev.mayaqq.sam.extensions.PlayerEntityExtension;
 import dev.mayaqq.sam.registry.SamAttributes;
@@ -8,33 +10,32 @@ import dev.mayaqq.sam.registry.entities.summons.SummonEntity;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.attribute.EntityAttribute;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.SwordItem;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.Uuids;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.UUID;
 
 public class SummonerWandItem extends Item {
 
     EntityType<? extends SummonEntity> entityType;
-    private double minionDamage;
 
     public SummonerWandItem(Settings settings, EntityType<? extends SummonEntity> entityType) {
         super(settings.maxCount(1));
         this.entityType = entityType;
-    }
-
-    @Override
-    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        if (entity instanceof PlayerEntity player) {
-            minionDamage = player.getAttributeValue(SamAttributes.MINION_DAMAGE) + SamEntities.summonEntityDamageMap.get(entityType);
-        }
     }
 
     @Override
@@ -57,7 +58,5 @@ public class SummonerWandItem extends Item {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         tooltip.add(Text.of("Right click to summon a minion!"));
-        tooltip.add(Text.of(" "));
-        tooltip.add(Text.of("Minion Damage: " + minionDamage));
     }
 }

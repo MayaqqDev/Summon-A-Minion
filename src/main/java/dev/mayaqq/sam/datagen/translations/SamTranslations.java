@@ -29,12 +29,23 @@ public class SamTranslations {
             // Items
             tb.add(SamItems.SLIME_STAFF, "Slime Staff");
             tb.add(SamItems.ZOOLOGIST_SPAWN_EGG, "Zoologist Spawn Egg");
+                // Cosmetic
+                tb.add(SamItems.DOG_EARS, "Dog Ears");
+                tb.add(SamItems.DOG_TAIL, "Dog Tail");
+                tb.add(SamItems.FOX_EARS, "Foxx Ears");
+                tb.add(SamItems.FOX_TAIL, "Foxx Tail");
+                tb.add(SamItems.BUNNY_EARS, "Bunny Ears");
+                tb.add(SamItems.BUNNY_TAIL, "Bunny Tail");
+                tb.add(SamItems.LIZARD_EARS, "Lizard Ears");
+                tb.add(SamItems.LIZARD_TAIL, "Lizard Tail");
 
             // Item Groups
             tb.add(SamItemGroups.MAIN_TK, "Summon a Minion");
             tb.add(SamItemGroups.GENERAL_TK, "General");
             tb.add(SamItemGroups.WANDS_TK, "Wands");
             tb.add(SamItemGroups.WHIPS_TK, "Whips");
+            tb.add(SamItemGroups.MISC_TK, "Misc");
+            tb.add(SamItemGroups.COSMETICS_TK, "Cosmetics");
 
             // Config
             tb.add(SamConfig.TITLE, "Summon A Minion Config");
