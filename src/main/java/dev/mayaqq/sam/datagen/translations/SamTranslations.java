@@ -57,4 +57,53 @@ public class SamTranslations {
             tb.add(SamConfig.OPTION_SLIME_STAFF_REQUIRE_PLAYER_KILL, "Require Player Kill");
         }
     }
+
+    public static class TR_TR extends FabricLanguageProvider {
+        public TR_TR(FabricDataOutput dataOutput) {
+            super(dataOutput, "tr_tr");
+        }
+
+        @Override
+        public void generateTranslations(TranslationBuilder tb) {
+            // Summons
+            tb.add(SamEntities.SLIME_SUMMON, "Balçık Yaratıcı");
+
+            // Entities
+            tb.add(SamEntities.ZOOLOGIST_ENTITY, "Hayvanbilimci");
+
+            // Attributes
+            tb.add(SamAttributes.MINION_DAMAGE, "Yardakçı Hasarı");
+            tb.add(SamAttributes.MINION_SLOTS, "Yardakçı Yuvaları");
+
+            // Items
+            tb.add(SamItems.SLIME_STAFF, "Balçık Asası");
+            tb.add(SamItems.ZOOLOGIST_SPAWN_EGG, "Hayvanbilimci Yumurtası");
+                // Cosmetic
+                tb.add(SamItems.DOG_EARS, "Köpek Kulakları");
+                tb.add(SamItems.DOG_TAIL, "Köpek Kuyruğu");
+                tb.add(SamItems.FOX_EARS, "Tilki Kulakları");
+                tb.add(SamItems.FOX_TAIL, "Tilki Kuyruğu");
+                tb.add(SamItems.BUNNY_EARS, "Tavşan Kulakları");
+                tb.add(SamItems.BUNNY_TAIL, "Tavşan Kuyruğu");
+                tb.add(SamItems.LIZARD_EARS, "Kertenkele Kulakları");
+                tb.add(SamItems.LIZARD_TAIL, "Kertenkele Kuyruğu");
+
+            // Item Groups
+            tb.add(SamItemGroups.MAIN_TK, "Summon a Minion");
+            tb.add(SamItemGroups.GENERAL_TK, "Genel");
+            tb.add(SamItemGroups.WANDS_TK, "Asalar");
+            tb.add(SamItemGroups.WHIPS_TK, "Kırbaçlar");
+            tb.add(SamItemGroups.MISC_TK, "Çeşitli");
+            tb.add(SamItemGroups.COSMETICS_TK, "Kozmetikler");
+
+            // Config
+            tb.add(SamConfig.TITLE, "Summon A Minion Ayarları");
+            tb.add(SamConfig.CATEGORY_LOOT_TABLES, "Ganimet Tabloları");
+            tb.add(SamConfig.OPTION_GROUP_SLIME_STAFF, "Balçık Asası");
+            tb.add(SamConfig.OPTION_SLIME_STAFF, "Balçık Asasının Ganimet Tablosu");
+            tb.add(SamConfig.OPTION_SLIME_STAFF_DESCRIPTION, "Balçıklar Balçık Asasını düşürsün mü?");
+            tb.add(SamConfig.OPTION_SLIME_STAFF_CHANCE, "Şans");
+            tb.add(SamConfig.OPTION_SLIME_STAFF_REQUIRE_PLAYER_KILL, "Oyuncu ölümünü gerekli kıl");
+        }
+    }
 }
