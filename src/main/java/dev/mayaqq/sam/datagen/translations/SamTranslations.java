@@ -66,7 +66,7 @@ public class SamTranslations {
         @Override
         public void generateTranslations(TranslationBuilder tb) {
             // Summons
-            tb.add(SamEntities.SLIME_SUMMON, "Balçık Yaratıcı");
+            tb.add(SamEntities.SLIME_SUMMON, "Balçık Yardakçısı");
 
             // Entities
             tb.add(SamEntities.ZOOLOGIST_ENTITY, "Hayvanbilimci");
