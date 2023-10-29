@@ -80,17 +80,15 @@ public class ZoologistEntity extends MerchantEntity {
                 this.fillRecipes();
             }
 
-            if (this.getOffers().isEmpty()) {
-                return ActionResult.success(this.getWorld().isClient);
-            } else {
+            if (!this.getOffers().isEmpty()) {
                 if (!this.getWorld().isClient) {
                     this.offers.forEach(TradeOffer::resetUses);
                     this.setCustomer(player);
                     this.sendOffers(player, this.getDisplayName(), 1);
                 }
 
-                return ActionResult.success(this.getWorld().isClient);
             }
+            return ActionResult.success(this.getWorld().isClient);
         } else {
             return super.interactMob(player, hand);
         }

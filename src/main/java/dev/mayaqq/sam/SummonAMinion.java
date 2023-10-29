@@ -18,7 +18,7 @@ public class SummonAMinion implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        SamConfig.INSTANCE.load();
+        SamConfig.HANDLER.load();
         SamItems.register();
         SamAttributes.register();
         SamEntities.register();

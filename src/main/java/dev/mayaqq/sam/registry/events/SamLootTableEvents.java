@@ -14,10 +14,10 @@ import net.minecraft.util.Identifier;
 public class SamLootTableEvents {
     public static void register() {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-            if (source.isBuiltin() && id.equals(new Identifier("minecraft", "entities/slime")) && SamConfig.INSTANCE.slimeStaff) {
+            if (source.isBuiltin() && id.equals(new Identifier("minecraft", "entities/slime")) && SamConfig.HANDLER.instance().slimeStaff) {
                 LootPool.Builder pool = LootPool.builder().with(ItemEntry.builder(SamItems.SLIME_STAFF))
-                        .rolls(BinomialLootNumberProvider.create(1, SamConfig.INSTANCE.slimeStaffChance));
-                if (SamConfig.INSTANCE.requirePlayerKill) pool.conditionally(KilledByPlayerLootCondition.builder());
+                        .rolls(BinomialLootNumberProvider.create(1, SamConfig.HANDLER.instance().slimeStaffChance));
+                if (SamConfig.HANDLER.instance().requirePlayerKill) pool.conditionally(KilledByPlayerLootCondition.builder());
                 tableBuilder.pool(pool);
             }
         });

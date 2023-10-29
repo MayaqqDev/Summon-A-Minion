@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "sam:bunny_ears",
+    "sam:dog_ears",
+    "sam:fox_ears",
+    "sam:lizard_ears"
+  ]
+}

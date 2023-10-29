@@ -22,6 +22,15 @@ public class SamModelGenerator extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator img) {
         img.register(SamItems.SLIME_STAFF, Models.HANDHELD);
         img.register(SamItems.ZOOLOGIST_SPAWN_EGG, item("template_spawn_egg"));
+        img.register(SamItems.LEATHER_WHIP, Models.HANDHELD);
+        img.register(SamItems.DOG_EARS, Models.GENERATED);
+        img.register(SamItems.DOG_TAIL, Models.GENERATED);
+        img.register(SamItems.FOX_EARS, Models.GENERATED);
+        img.register(SamItems.FOX_TAIL, Models.GENERATED);
+        img.register(SamItems.LIZARD_EARS, Models.GENERATED);
+        img.register(SamItems.LIZARD_TAIL, Models.GENERATED);
+        img.register(SamItems.BUNNY_EARS, Models.GENERATED);
+        img.register(SamItems.BUNNY_TAIL, Models.GENERATED);
     }
 
     private static Model make(TextureKey... requiredTextureKeys) {

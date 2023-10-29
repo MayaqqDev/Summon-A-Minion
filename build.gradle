@@ -6,10 +6,12 @@ plugins {
 version = project.mod_version
 group = project.maven_group
 
+// Set the archives name to the gradle.properties
 base {
     archivesName = project.archives_base_name
 }
 
+// Fix fabric loader being loaded with the wrong version
 configurations.all {
     resolutionStrategy {
         force ("net.fabricmc:fabric-loader:$loader_version")
@@ -24,6 +26,8 @@ repositories {
     maven { url = "https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1" } // DevAuth
     maven { url = "https://maven.jamieswhiteshirt.com/libs-release" } // Reach Entity Attributes
     maven { url = "https://maven.ladysnake.org/releases" } // Cardinal Components
+    maven { url = "https://maven.quiltmc.org/repository/release/" } // Config stuff
+    maven { url = "https://oss.sonatype.org/content/repositories/snapshots/" } // More Config Stuff
 }
 
 dependencies {
@@ -47,7 +51,8 @@ dependencies {
     include modImplementation("maven.modrinth:fractal-lib:${project.fractal_version}")
 
     // Config
-    modImplementation "maven.modrinth:yacl:${project.yacl_version}"
+    modImplementation ("maven.modrinth:yacl:${project.yacl_version}")
+    annotationProcessor ("maven.modrinth:yacl:${project.yacl_version}")
     modImplementation ("com.terraformersmc:modmenu:${project.modmenu_version}")
 
     // REI
@@ -73,6 +78,7 @@ dependencies {
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${project.devauth_version}")
 }
 
+// Add some id's to the fabric.mod.json
 processResources {
     inputs.property "version", project.version
     inputs.property "loader_version", project.loader_version
@@ -84,10 +90,10 @@ processResources {
     }
 }
 
+// Set the Java compile options to target Java 17
 tasks.withType(JavaCompile).configureEach {
     it.options.release = 17
 }
-
 java {
     withSourcesJar()
 
@@ -95,12 +101,14 @@ java {
     targetCompatibility = JavaVersion.VERSION_17
 }
 
+// Add the LICENSE file to the sources jar
 jar {
     from("LICENSE") {
         rename { "${it}_${project.base.archivesName.get()}"}
     }
 }
 
+// Custom run configurations
 loom {
     runs {
         datagenClient {
@@ -122,6 +130,7 @@ loom {
     }
 }
 
+// Add the generated sources to the fabric resources
 sourceSets {
     main {
         resources {
@@ -132,6 +141,7 @@ sourceSets {
     }
 }
 
+// Maven publishing
 publishing {
     publications {
         mavenJava(MavenPublication) {

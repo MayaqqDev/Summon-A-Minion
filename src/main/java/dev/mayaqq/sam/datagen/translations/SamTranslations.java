@@ -55,6 +55,12 @@ public class SamTranslations {
             tb.add(SamConfig.OPTION_SLIME_STAFF_DESCRIPTION, "Should Slimes drop the Slime Staff");
             tb.add(SamConfig.OPTION_SLIME_STAFF_CHANCE, "Chance");
             tb.add(SamConfig.OPTION_SLIME_STAFF_REQUIRE_PLAYER_KILL, "Require Player Kill");
+
+            // Trinket Slots
+            tb.add("trinkets.slot.head.cosmetic", "Head Cosmetic");
+            tb.add("trinkets.slot.chest.cosmetic", "Chest Cosmetic");
+            tb.add("trinkets.slot.legs.cosmetic", "Legs Cosmetic");
+            tb.add("trinkets.slot.feet.cosmetic", "Feet Cosmetic");
         }
     }
 }

@@ -43,7 +43,7 @@ public class PlayerEntityMixin implements PlayerEntityExtension {
 
     @Override
     public int summonAMinion$getSummonedMinionLimit() {
-        return (int) ((PlayerEntity) (Object) this).getAttributeInstance(SamAttributes.MINION_SLOTS).getValue();
+        return (int) getThis().getAttributeInstance(SamAttributes.MINION_SLOTS).getValue();
     }
 
     @Override
@@ -53,6 +53,11 @@ public class PlayerEntityMixin implements PlayerEntityExtension {
 
     @Override
     public float summonAMinion$getSummonedMinionDamage() {
-        return (float) ((PlayerEntity) (Object) this).getAttributeInstance(SamAttributes.MINION_DAMAGE).getValue();
+        return (float) getThis().getAttributeInstance(SamAttributes.MINION_DAMAGE).getValue();
+    }
+
+    @Unique
+    private PlayerEntity getThis() {
+        return (PlayerEntity) (Object) this;
     }
 }

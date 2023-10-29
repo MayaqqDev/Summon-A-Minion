@@ -13,7 +13,8 @@ public class SlimeSummonRenderer extends MobEntityRenderer<SlimeSummonEntity, Sl
     public static final EntityModelLayer MODEL_SLIME_SUMMON_LAYER = new EntityModelLayer(id( "cube"), "main");
 
     public SlimeSummonRenderer(EntityRendererFactory.Context context) {
-        super(context, new SlimeSummonModel(context.getPart(MODEL_SLIME_SUMMON_LAYER)), 0.5f);
+        // the f at the end is the shadow size
+        super(context, new SlimeSummonModel(context.getPart(MODEL_SLIME_SUMMON_LAYER)), 0.3f);
     }
 
     @Override

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "sam:bunny_tail",
+    "sam:dog_tail",
+    "sam:fox_tail",
+    "sam:lizard_tail"
+  ]
+}
