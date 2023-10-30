@@ -12,6 +12,7 @@ public class SamDatagen implements DataGeneratorEntrypoint {
     public void onInitializeDataGenerator(FabricDataGenerator fdg) {
         FabricDataGenerator.Pack pack = fdg.createPack();
         pack.addProvider(SamTranslations.EN_US::new);
+        pack.addProvider(SamTranslations.TR_TR::new);
         pack.addProvider(SamModelGenerator::new);
         pack.addProvider(SamTags.ItemTags::new);
         pack.addProvider(SamTags.BlockTags::new);
