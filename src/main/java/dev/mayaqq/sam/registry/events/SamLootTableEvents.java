@@ -3,8 +3,6 @@ package dev.mayaqq.sam.registry.events;
 import dev.mayaqq.sam.config.SamConfig;
 import dev.mayaqq.sam.registry.SamItems;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
-import net.minecraft.client.render.entity.SlimeEntityRenderer;
-import net.minecraft.client.render.entity.model.SlimeEntityModel;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.condition.KilledByPlayerLootCondition;
 import net.minecraft.loot.entry.ItemEntry;

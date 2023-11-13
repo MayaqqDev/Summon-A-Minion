@@ -1,5 +1,6 @@
 package dev.mayaqq.sam.datagen.tags;
 
+import dev.mayaqq.sam.SummonAMinion;
 import dev.mayaqq.sam.registry.SamItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -19,6 +20,8 @@ public class SamTags {
         public static final TagKey<Item> COSMETIC_LEGS = TagKey.of(Registries.ITEM.getKey(), new Identifier("trinkets", "legs/cosmetic"));
         public static final TagKey<Item> COSMETIC_FEET = TagKey.of(Registries.ITEM.getKey(), new Identifier("trinkets", "feet/cosmetic"));
 
+        public static final TagKey<Item> WHIPS = TagKey.of(Registries.ITEM.getKey(), SummonAMinion.id("whips"));
+
         public ItemTags(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture) {
             super(output, completableFuture);
         }
@@ -35,6 +38,8 @@ public class SamTags {
                     .add(SamItems.DOG_TAIL)
                     .add(SamItems.FOX_TAIL)
                     .add(SamItems.LIZARD_TAIL);
+            getOrCreateTagBuilder(WHIPS)
+                    .add(SamItems.LEATHER_WHIP);
         }
     }
 

@@ -8,6 +8,7 @@ import dev.mayaqq.sam.registry.events.SamConnectionEvents;
 import dev.mayaqq.sam.registry.events.SamLootTableEvents;
 import dev.mayaqq.sam.registry.itemGroups.SamItemGroups;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.server.command.TeamCommand;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

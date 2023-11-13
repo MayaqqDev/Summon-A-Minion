@@ -1,14 +1,17 @@
 package dev.mayaqq.sam.mixin;
 
+import dev.mayaqq.sam.SummonAMinion;
 import dev.mayaqq.sam.extensions.PlayerEntityExtension;
 import dev.mayaqq.sam.registry.SamAttributes;
 import dev.mayaqq.sam.registry.entities.summons.SummonEntity;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.player.PlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.ArrayList;

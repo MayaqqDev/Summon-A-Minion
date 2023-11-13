@@ -1,5 +1,6 @@
 package dev.mayaqq.sam.registry;
 
+import dev.mayaqq.sam.registry.entities.WhipProjectileEntity;
 import dev.mayaqq.sam.registry.entities.ZoologistEntity;
 import dev.mayaqq.sam.registry.entities.summons.SlimeSummonEntity;
 import dev.mayaqq.sam.registry.entities.summons.SummonEntity;
@@ -25,6 +26,8 @@ public class SamEntities {
     public static final EntityType<ZoologistEntity> ZOOLOGIST_ENTITY = Registry.register(Registries.ENTITY_TYPE, id("zoologist"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, ZoologistEntity::new).dimensions(EntityDimensions.fixed(0.6F, 1.95F)).build());
 
     public static final EntityType<SlimeSummonEntity> SLIME_SUMMON = registerSummon("slime_summon", SlimeSummonEntity::new, EntityDimensions.fixed(0.375F, 0.375F), createDefaultAttributes(0.30000001192092896, 1.0));
+
+    public static final EntityType<WhipProjectileEntity> WHIP_PROJECTILE = Registry.register(Registries.ENTITY_TYPE, id("whip_projectile"), FabricEntityTypeBuilder.<WhipProjectileEntity>create(SpawnGroup.MISC, WhipProjectileEntity::new).dimensions(EntityDimensions.fixed(0.1F, 0.1F)).build());
 
     public static void register() {
         FabricDefaultAttributeRegistry.register(ZOOLOGIST_ENTITY, ZoologistEntity.createZoologistAttributes());

@@ -1,6 +1,7 @@
 package dev.mayaqq.sam.client.rendering;
 
 import dev.emi.trinkets.api.client.TrinketRendererRegistry;
+import dev.mayaqq.sam.client.rendering.entities.WhipProjectileEntityRenderer;
 import dev.mayaqq.sam.client.rendering.entities.ZoologistEntityRenderer;
 import dev.mayaqq.sam.client.rendering.entities.summons.slime.SlimeSummonModel;
 import dev.mayaqq.sam.client.rendering.entities.summons.slime.SlimeSummonRenderer;
@@ -16,6 +17,8 @@ public class RenderingRegistry {
         EntityModelLayerRegistry.registerModelLayer(SlimeSummonRenderer.MODEL_SLIME_SUMMON_LAYER, SlimeSummonModel::getTexturedModelData);
 
         EntityRendererRegistry.register(SamEntities.ZOOLOGIST_ENTITY, ZoologistEntityRenderer::new);
+
+        EntityRendererRegistry.register(SamEntities.WHIP_PROJECTILE, WhipProjectileEntityRenderer::new);
 
         TrinketRendererRegistry.registerRenderer(SamItems.DOG_TAIL, new TailRenderer());
     }

@@ -1,0 +1,22 @@
+{
+  "attribute.name.generic.sam.minion_damage": "Yardakçı Hasarı",
+  "attribute.name.generic.sam.minion_slots": "Yardakçı Yuvaları",
+  "entity.sam.slime_summon": "Balçık Yardakçısı",
+  "entity.sam.zoologist": "Hayvanbilimci",
+  "item.sam.bunny_ears": "Tavşan Kulakları",
+  "item.sam.bunny_tail": "Tavşan Kuyruğu",
+  "item.sam.dog_ears": "Köpek Kulakları",
+  "item.sam.dog_tail": "Köpek Kuyruğu",
+  "item.sam.fox_ears": "Tilki Kulakları",
+  "item.sam.fox_tail": "Tilki Kuyruğu",
+  "item.sam.lizard_ears": "Kertenkele Kulakları",
+  "item.sam.lizard_tail": "Kertenkele Kuyruğu",
+  "item.sam.slime_staff": "Balçık Asası",
+  "item.sam.zoologist_spawn_egg": "Hayvanbilimci Yumurtası",
+  "itemGroup.sam.cosmetics": "Kozmetikler",
+  "itemGroup.sam.general": "Genel",
+  "itemGroup.sam.main": "Summon a Minion",
+  "itemGroup.sam.misc": "Çeşitli",
+  "itemGroup.sam.wands": "Asalar",
+  "itemGroup.sam.whips": "Kırbaçlar"
+}

@@ -1,6 +1,5 @@
 package dev.mayaqq.sam.datagen.translations;
 
-import dev.mayaqq.sam.config.SamConfig;
 import dev.mayaqq.sam.registry.SamAttributes;
 import dev.mayaqq.sam.registry.SamEntities;
 import dev.mayaqq.sam.registry.SamItems;
@@ -48,13 +47,15 @@ public class SamTranslations {
             tb.add(SamItemGroups.COSMETICS_TK, "Cosmetics");
 
             // Config
-            tb.add(SamConfig.TITLE, "Summon A Minion Config");
-            tb.add(SamConfig.CATEGORY_LOOT_TABLES, "Loot Tables");
-            tb.add(SamConfig.OPTION_GROUP_SLIME_STAFF, "Slime Staff");
-            tb.add(SamConfig.OPTION_SLIME_STAFF, "Slime Staff Loot Table");
-            tb.add(SamConfig.OPTION_SLIME_STAFF_DESCRIPTION, "Should Slimes drop the Slime Staff");
-            tb.add(SamConfig.OPTION_SLIME_STAFF_CHANCE, "Chance");
-            tb.add(SamConfig.OPTION_SLIME_STAFF_REQUIRE_PLAYER_KILL, "Require Player Kill");
+            String config = "yacl3.config.sam:config.";
+            tb.add(config + "category.loot_tables", "Loot Tables");
+                tb.add(config + "category.loot_tables.group.slime_staff", "Slime Staff");
+                    tb.add(config + "slimeStaff", "Enable Slime Staff");
+                        tb.add(config + "slimeStaff.desc", "Whether or not the Slime Staff should be obtainable from Slimes.");
+                    tb.add(config + "slimeStaffChance", "Slime Staff Chance");
+                        tb.add(config + "slimeStaffChance.desc", "The chance of a Slime dropping a Slime Staff.");
+                    tb.add(config + "requirePlayerKill", "Require Player Kill");
+                        tb.add(config + "requirePlayerKill.desc", "Whether or not the Slime Staff should only drop if the player kills the Slime or always drop regardless of who kills the Slime.");
 
             // Trinket Slots
             tb.add("trinkets.slot.head.cosmetic", "Head Cosmetic");
@@ -103,13 +104,6 @@ public class SamTranslations {
             tb.add(SamItemGroups.COSMETICS_TK, "Kozmetikler");
 
             // Config
-            tb.add(SamConfig.TITLE, "Summon A Minion Ayarları");
-            tb.add(SamConfig.CATEGORY_LOOT_TABLES, "Ganimet Tabloları");
-            tb.add(SamConfig.OPTION_GROUP_SLIME_STAFF, "Balçık Asası");
-            tb.add(SamConfig.OPTION_SLIME_STAFF, "Balçık Asasının Ganimet Tablosu");
-            tb.add(SamConfig.OPTION_SLIME_STAFF_DESCRIPTION, "Balçıklar Balçık Asasını düşürsün mü?");
-            tb.add(SamConfig.OPTION_SLIME_STAFF_CHANCE, "Şans");
-            tb.add(SamConfig.OPTION_SLIME_STAFF_REQUIRE_PLAYER_KILL, "Oyuncu ölümünü gerekli kıl");
         }
     }
 }

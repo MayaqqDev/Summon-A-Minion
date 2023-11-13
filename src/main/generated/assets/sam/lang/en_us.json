@@ -1,13 +1,6 @@
 {
   "attribute.name.generic.sam.minion_damage": "Minion Damage",
   "attribute.name.generic.sam.minion_slots": "Minion Slots",
-  "config.sam.category.loot_tables": "Loot Tables",
-  "config.sam.option.slime_staff": "Slime Staff Loot Table",
-  "config.sam.option.slime_staff.chance": "Chance",
-  "config.sam.option.slime_staff.description": "Should Slimes drop the Slime Staff",
-  "config.sam.option.slime_staff.require_player_kill": "Require Player Kill",
-  "config.sam.option_group.slime_staff": "Slime Staff",
-  "config.sam.title": "Summon A Minion Config",
   "entity.sam.slime_summon": "Slime Summon",
   "entity.sam.zoologist": "Zoologist",
   "item.sam.bunny_ears": "Bunny Ears",
@@ -29,5 +22,13 @@
   "trinkets.slot.chest.cosmetic": "Chest Cosmetic",
   "trinkets.slot.feet.cosmetic": "Feet Cosmetic",
   "trinkets.slot.head.cosmetic": "Head Cosmetic",
-  "trinkets.slot.legs.cosmetic": "Legs Cosmetic"
+  "trinkets.slot.legs.cosmetic": "Legs Cosmetic",
+  "yacl3.config.sam:config.category.loot_tables": "Loot Tables",
+  "yacl3.config.sam:config.category.loot_tables.group.slime_staff": "Slime Staff",
+  "yacl3.config.sam:config.requirePlayerKill": "Require Player Kill",
+  "yacl3.config.sam:config.requirePlayerKill.desc": "Whether or not the Slime Staff should only drop if the player kills the Slime or always drop regardless of who kills the Slime.",
+  "yacl3.config.sam:config.slimeStaff": "Enable Slime Staff",
+  "yacl3.config.sam:config.slimeStaff.desc": "Whether or not the Slime Staff should be obtainable from Slimes.",
+  "yacl3.config.sam:config.slimeStaffChance": "Slime Staff Chance",
+  "yacl3.config.sam:config.slimeStaffChance.desc": "The chance of a Slime dropping a Slime Staff."
 }
